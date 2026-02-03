@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escape Room – Projektwoche</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__left">
+      <div class="brand">
+        <div class="brand__title" id="gameTitle">Escape Room</div>
+        <div class="brand__subtitle" id="gameSubtitle">Browser-Spiel (HTML/CSS/JS) – offline-fähig</div>
+      </div>
+    </div>
+
+    <div class="topbar__right">
+      <div class="stat">
+        <div class="stat__label">Zeit</div>
+        <div class="stat__value" id="timeLeft">--:--</div>
+      </div>
+      <div class="stat">
+        <div class="stat__label">Hinweise</div>
+        <div class="stat__value"><span id="hintsUsed">0</span>/<span id="hintLimit">0</span></div>
+      </div>
+      <div class="stat">
+        <div class="stat__label">Fortschritt</div>
+        <div class="stat__value"><span id="progress">0</span>%</div>
+      </div>
+
+      <button class="btn btn--ghost" id="btnReset" title="Fortschritt löschen und neu starten">Reset</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="card main">
+      <div class="main__header">
+        <h1 class="place" id="placeTitle">–</h1>
+        <div class="badge" id="placeBadge">Station</div>
+      </div>
+
+      <div class="story" id="story"></div>
+
+      <div class="puzzle">
+        <div class="puzzle__header">
+          <h2 class="puzzle__title" id="puzzleTitle">Rätsel</h2>
+          <div class="puzzle__actions">
+            <button class="btn btn--ghost" id="btnHint">Hinweis</button>
+          </div>
+        </div>
+
+        <div class="puzzle__body" id="puzzleHost"></div>
+
+        <div class="puzzle__footer">
+          <div class="feedback" id="feedback" aria-live="polite"></div>
+          <div class="nav">
+            <button class="btn btn--ghost" id="btnBack" title="Zur zuletzt besuchten Station">Zurück</button>
+            <button class="btn" id="btnSubmit">Prüfen</button>
+            <button class="btn btn--secondary" id="btnContinue" disabled>Weiter</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="card side">
+      <h2 class="side__title">Inventar</h2>
+      <ul class="inventory" id="inventory"></ul>
+
+      <div class="divider"></div>
+
+      <h2 class="side__title">Journal</h2>
+      <p class="muted small">
+        Ihr könnt zu bereits besuchten Stationen zurückspringen (hilft bei gesperrten Türen).
+      </p>
+      <div class="journal" id="journal"></div>
+
+      <div class="divider"></div>
+
+      <h2 class="side__title">Notizen</h2>
+      <p class="muted">
+        Tipp: Arbeitet im Team. Alles ist so gebaut, dass es ohne Internet im Browser läuft.
+      </p>
+
+      <div class="divider"></div>
+
+      <details class="details">
+        <summary>Lehrkraft-Modus / Debug</summary>
+        <p class="muted">
+          Öffnet die Seite mit <code>?debug=1</code> in der URL.
+          Dann erscheint ein Sprungmenü zu Stationen.
+        </p>
+        <div id="debugPanel" class="debug" hidden></div>
+      </details>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <span id="footerText">–</span>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
