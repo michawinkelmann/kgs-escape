@@ -379,12 +379,13 @@ const STATIONS = [
       <p>Eine metallische Kellertür klemmt. Mit dem Magneten bekommt ihr sie auf. Drinnen: ein Gang mit unsichtbaren Markierungen.</p>
       <div class="callout">
         <strong>Hinweis:</strong> „Nur unter UV sieht man den Weg.“<br/>
-        Unter UV erkennt ihr die Buchstabenfolge: <code>K G S C H R O N O</code>
+        Unter UV erscheinen neun Symbole (Flur, PC, Bücher, Reagenzglas, Blitz, DNA, Aktenschrank, Metronom, Sport).<br/>
+        <em>Ordnet eure gesammelten Buchstaben nach der Reihenfolge dieser Symbole.</em>
       </div>
-      <p class="muted">Das ist der finale Zeitcode – aber ihr braucht noch den <strong>Server-Schlüssel</strong>.</p>
+      <p class="muted">So entsteht der finale Zeitcode – aber ihr braucht noch den <strong>Server-Schlüssel</strong>.</p>
     `,
     puzzle: { type: "code", title: "Bestätige die Buchstabenfolge", prompt: "Gib die Buchstabenfolge ein (ohne Leerzeichen).", answer: "KGSCHRONO", normalize: "alnumUpper" },
-    hints: ["Die UV-Markierung zeigt die Buchstabenfolge direkt.", "Ohne Leerzeichen: KGSCHRONO."],
+    hints: ["Die Symbole stehen für frühere Stationen.", "Nutzt die Reihenfolge der Symbole, um eure 9 Buchstaben zu sortieren."],
     rewardItems: [{ id: "server_hint", name: "Notiz: Serverraum hinter der Aula", tag: "Hinweis" }],
     requiresItems: ["magnet", "uv"],
     nextId: "workshop"
@@ -396,29 +397,30 @@ const STATIONS = [
     title: "Werkraum/Technik – Der Not-Aus-Kreis",
     badge: "Station 13",
     storyHtml: `
-      <p>Im Werkraum findet ihr eine Kiste: „Server-Schlüssel nur bei korrektem Not-Aus-Protokoll.“</p>
+      <p>Im Werkraum findet ihr eine Kiste: „Server-Schlüssel nur bei korrektem Not-Aus-Kreis.“</p>
       <div class="callout">
-        <strong>Protokoll:</strong><br/>
-        1) Stromquelle trennen<br/>
-        2) Gefahrenbereich sichern<br/>
-        3) Hilfe holen (Erwachsene/Lehrkraft)<br/>
-        4) „Mutprobe“ machen (NEIN)
+        <strong>Wandposter (Merkregel):</strong><br/>
+        „Erst stoppen, dann sichern, dann holen. Unnötiges Risiko vermeiden.“<br/>
+        Auf dem Boden sind sechs Felder im Kreis, aber nur vier gehören zur Sicherheitskette.
       </div>
-      <p class="muted">Rätseltyp: Schalter (nur sinnvolle Punkte aktivieren).</p>
+      <p class="muted">Rätseltyp: Schalter (nur passende Sicherheitsmaßnahmen aktivieren).</p>
     `,
     puzzle: {
       type: "switches",
-      title: "Wähle das korrekte Not-Aus-Protokoll",
-      prompt: "Aktiviere die sinnvollen Schritte (und lasse Unsinn aus):",
+      title: "Wähle die Schritte des Not-Aus-Kreises",
+      prompt: "Aktiviere nur die Schritte, die zu einem sicheren Not-Aus gehören:",
       options: [
         "Stromquelle trennen",
         "Gefahrenbereich sichern",
         "Hilfe holen (Erwachsene/Lehrkraft)",
-        "Mutprobe machen"
+        "Erste Hilfe leisten / Betreuung",
+        "Werkzeug liegen lassen, weiterarbeiten",
+        "Mutprobe machen",
+        "„Kurz testen, ob es doch geht“"
       ],
-      correctOn: [0,1,2]
+      correctOn: [0, 1, 2, 3]
     },
-    hints: ["Die ersten drei sind sinnvoll, die Mutprobe nicht.", "Sicherheit geht vor."],
+    hints: ["Alles, was das Risiko erhöht, gehört nicht dazu.", "Sicherheitskette: stoppen → sichern → holen → betreuen."],
     rewardItems: [{ id: "server_key", name: "Server-Schlüssel", tag: "Tool" }],
     requiresItems: ["wire", "tuningfork"],
     nextId: "server"
@@ -437,7 +439,7 @@ const STATIONS = [
       </div>
     `,
     puzzle: { type: "code", title: "Gib den Zeitcode ein", prompt: "Zeitcode eingeben:", answer: "KGSCHRONO", normalize: "alnumUpper" },
-    hints: ["Der Code war im Keller unter UV sichtbar.", "Ohne Leerzeichen: KGSCHRONO."],
+    hints: ["Im Keller halfen euch die Symbole, die Reihenfolge zu finden.", "Ohne Leerzeichen eintippen."],
     rewardItems: [],
     requiresItems: ["server_key", "l1","l2","l3","l4","l5","l6","l7","l8","l9"],
     nextId: "end"
