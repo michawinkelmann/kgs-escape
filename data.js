@@ -58,7 +58,7 @@ const STATIONS = [
     title: "Hauptflur – Flackernde Aushänge",
     badge: "Station 1",
     storyHtml: `
-      <p>Im Hauptflur flackern die digitalen Aushänge. Ein fiktiver Schüler („Mika“) zeigt euch einen Zettel:</p>
+      <p>Im Hauptflur flackern die digitalen Aushänge. Mika zeigt euch einen Zettel:</p>
       <div class="callout"><strong>Notiz:</strong> „Wenn die Zeit spinnt, starte beim <em>normalen Ablauf</em>. Der erste Buchstabe gehört dem <em>Anfang</em>.“</div>
       <p class="muted">Rätseltyp: Multiple Choice. Ziel: logisch denken.</p>
     `,
