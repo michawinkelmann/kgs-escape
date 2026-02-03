@@ -1,5 +1,5 @@
 /* data.js
-   Vollversion (ca. 3 Stunden). Inhalte sind “typische Schulorte”, Lehrkräfte bleiben Platzhalter.
+   Vollversion (ca. 3 Stunden). Inhalte sind “typische Schulorte”.
    Schülernamen sind fiktiv/rollenbasiert.
 */
 
@@ -11,10 +11,10 @@ const SCHOOL = {
     "Mensa", "Hausmeisterkeller", "Werkraum/Technik", "Serverraum", "Aula"
   ],
   npcs: [
-    { role: "Hausmeister", name: "[PLATZHALTER] Herr/Frau X" },
-    { role: "Sekretariat", name: "[PLATZHALTER] Frau/Herr Y" },
-    { role: "IT-AG", name: "[PLATZHALTER] Technik-Team" },
-    { role: "Naturwissenschaften", name: "[PLATZHALTER] Lehrkraft Z" }
+    { role: "Hausmeister", name: "Herr Beckmann" },
+    { role: "Sekretariat", name: "Frau Yilmaz" },
+    { role: "IT-AG", name: "Team ByteBären" },
+    { role: "Naturwissenschaften", name: "Frau Sommerfeld" }
   ]
 };
 
@@ -90,7 +90,7 @@ const STATIONS = [
       <div class="callout">
         <strong>Post-it:</strong><br/>
         „Drei Tokens, drei Quellen: <em>Zahlenverständnis</em>, <em>Wortlänge</em>, <em>Rechenweg</em>.“<br/>
-        „A beginnt bei den Primzahlen, B steckt im Wort <em>NETZ</em>, C ist eine kleine Differenz.“
+        „A beginnt bei den Primzahlen, B steckt im Wort <em>NETZ</em>, C ist die Differenz aus <em>9</em> und <em>4</em>.“
       </div>
       <p class="muted">Rätseltyp: Mehrfacheingabe. (Hinweise sind indirekt.)</p>
     `,
@@ -233,7 +233,8 @@ const STATIONS = [
       <p>Die Tür zum Lehrerzimmer hat einen Kartenleser. Dahinter steht ein Aktenschrank mit Drehkombination.</p>
       <div class="callout">
         <strong>Hinweis am Schrank:</strong> „Vier kleine Rechenwege, vier Ziffern. Reihung zählt.“<br/>
-        <em>Minus, Mal, Minus, Minus</em> – die Zahlen stehen an der Tür eingeritzt.
+        <em>Minus, Mal, Minus, Minus</em> – an der Tür stehen vier Rechnungen (von links nach rechts):
+        <em>9−4, 2×4, 10−2, 7−2</em>.
       </div>
       <p class="muted">Rätseltyp: Zahlenschloss (Drehziffern). Voraussetzung: Schlüsselkarte.</p>
     `,
@@ -611,6 +612,7 @@ const STATIONS = [
     badge: "Station 23",
     storyHtml: `
       <p>Ein Laufplan nennt drei Abschnitte mit Rundenanzahl. Gesucht ist die Gesamtzahl.</p>
+      <div class="callout"><strong>Plan:</strong> Abschnitt A: 2 Runden, Abschnitt B: 1 Runde, Abschnitt C: 3 Runden.</div>
       <p class="muted">Rätseltyp: Zahlenschloss (Drehziffern).</p>
     `,
     puzzle: { type: "dials", title: "Gesamtrunden", prompt: "Stelle die Gesamtzahl an Runden ein:", digits: 2, answer: "06" },
@@ -1005,6 +1007,7 @@ const STATIONS = [
     badge: "Station 41",
     storyHtml: `
       <p>Aktenkürzel: MAT, BIO, PHY. Ein Hinweis: „Numeriert nach Reihenfolge im Kellerplan.“</p>
+      <div class="callout"><strong>Kellerplan:</strong> 1 = MAT, 2 = BIO, 3 = PHY.</div>
       <p class="muted">Rätseltyp: Zuordnen.</p>
     `,
     puzzle: {
@@ -1031,6 +1034,7 @@ const STATIONS = [
     badge: "Station 42",
     storyHtml: `
       <p>Ein Rezept nennt drei Mengen. Gesucht ist die Summe der Einheiten.</p>
+      <div class="callout"><strong>Rezept:</strong> 2 Einheiten Kaffee, 1 Einheit Milch, 3 Einheiten Wasser.</div>
       <p class="muted">Rätseltyp: Code-Eingabe.</p>
     `,
     puzzle: { type: "code", title: "Einheiten addieren", prompt: "Wie viele Einheiten insgesamt?", answer: "6", normalize: "alnumUpper" },
@@ -1047,6 +1051,7 @@ const STATIONS = [
     badge: "Station 43",
     storyHtml: `
       <p>Ein Plan listet vier Schritte, aber die Reihenfolge ist durcheinander.</p>
+      <div class="callout"><strong>Schritte:</strong> Bewerben, Nachfassen, Interessen klären, Optionen recherchieren.</div>
       <p class="muted">Rätseltyp: Zahlenschloss (Drehziffern).</p>
     `,
     puzzle: { type: "dials", title: "Reihenfolge als Code", prompt: "Setze die Reihenfolge als 4-stellige Zahl (1–4).", digits: 4, answer: "1234" },
@@ -1063,6 +1068,7 @@ const STATIONS = [
     badge: "Station 44",
     storyHtml: `
       <p>Ein Bauplan nennt Bauteile A, B, C mit Zahlen. Gesucht ist eine Summe und ein Endwert.</p>
+      <div class="callout"><strong>Bauteile:</strong> A = 6, B = 7, C = 8.</div>
       <p class="muted">Rätseltyp: Mehrfacheingabe (mehrstufig).</p>
     `,
     puzzle: {
