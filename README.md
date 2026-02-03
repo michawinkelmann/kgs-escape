@@ -9,11 +9,18 @@ Vanilla **HTML/CSS/JS** Escape-Room-Spiel für PCs im Browser – ohne Installat
 ## Spiel-Features
 - Countdown-Timer (Standard: **180 Minuten**)
 - Hinweise (Limit + Zeitstrafe)
-- Inventar (Tools & Code-Buchstaben)
+- Inventar (Tools, Code-Fragmente & Stabilisator-Ziffern A/B/C)
 - Gesperrte Bereiche per Item-Voraussetzung
 - Journal: zu besuchten Stationen zurückspringen
 - Save/Load (Browser localStorage) + Reset
 - Debug: `?debug=1`
+
+## Finale
+Im Verlauf sammelt ihr:
+- **9 Code-Fragmente (Buchstaben)** → daraus entsteht der **Zeitcode** (Reihenfolge-Hinweis im Keller).
+- **3 Stabilisator-Ziffern A/B/C** → verteilt im Spiel (nicht am Anfang).
+
+Im Serverraum wird beides kombiniert: **Zeitcode + A + B + C** (ohne Leerzeichen, Bindestriche sind egal).
 
 ## Puzzletypen
 - `code` (Text/Code)
@@ -24,6 +31,6 @@ Vanilla **HTML/CSS/JS** Escape-Room-Spiel für PCs im Browser – ohne Installat
 - `multi` (Mehrere Eingaben)
 - `dials` (Zahlenschloss)
 
-## Inhalt anpassen
+## Inhaltt anpassen
 Alles Spiel-spezifische steht in `data.js`.
 Lehrkräfte bleiben Platzhalter; Schüler sind fiktiv.

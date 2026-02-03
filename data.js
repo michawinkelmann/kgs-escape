@@ -39,9 +39,10 @@ const STATIONS = [
         <strong>ALARM:</strong> „<em>Chrono-Virus</em> aktiv. Zeitschleife startet in <strong>3 Stunden</strong>. Schulnetz wird auf 00:00 zurückgesetzt.“
       </div>
       <p>Die IT-AG findet eine Spur: Der Virus wurde über ein „Zeitkapsel-Protokoll“ verteilt – versteckt in mehreren Bereichen der Schule.</p>
-      <p class="muted">
-        Eure Mission: Sammelt die <strong>9 Code-Buchstaben</strong> und einen <strong>Server-Schlüssel</strong>.
-        Dann könnt ihr den Chrono-Virus im Serverraum stoppen.
+            <p class="muted">
+        Eure Mission: Sammelt die <strong>9 Code-Buchstaben</strong> (Chrono-Fragmente), den <strong>Server-Schlüssel</strong>
+        und zusätzlich die <strong>3 Stabilisator-Ziffern</strong> <strong>A</strong>, <strong>B</strong> und <strong>C</strong>.
+        Erst wenn ihr <em>Zeitcode + A/B/C</em> habt, lässt sich der Chrono-Virus endgültig löschen.
       </p>
       <div class="callout"><strong>Spielregeln:</strong> Hinweise kosten Zeit. Nutzt Journal/Zurück, um euch nicht festzufahren.</div>
     `,
@@ -61,7 +62,8 @@ const STATIONS = [
       <p>Im Hauptflur flackern die digitalen Aushänge. Mika zeigt euch einen Zettel:</p>
       <div class="callout"><strong>Notiz:</strong> „Wenn die Zeit spinnt, starte beim <em>normalen Ablauf</em>. Der erste Buchstabe gehört dem <em>Anfang</em>.“</div>
       <p class="muted">Rätseltyp: Multiple Choice. Ziel: logisch denken.</p>
-    `,
+      <p class="muted small">🔧 Ihr hört Lüfter hochdrehen – das Netz wehrt sich gegen den Virus.</p>
+`,
     puzzle: {
       type: "mcq",
       title: "Was kommt in der richtigen Reihenfolge?",
@@ -93,15 +95,16 @@ const STATIONS = [
         „A beginnt bei den Primzahlen, B steckt im Wort <em>NETZ</em>, C ist die Differenz aus <em>9</em> und <em>4</em>.“
       </div>
       <p class="muted">Rätseltyp: Mehrfacheingabe. (Hinweise sind indirekt.)</p>
-    `,
+      <p class="muted small">📟 Eine Anzeige flackert kurz: „SYNC?“ und verschwindet wieder.</p>
+`,
     puzzle: {
       type: "multi",
       title: "Gib die 3 Tokens ein",
       prompt: "Tragt die drei Tokens ein (Zahlen):",
       fields: [
-        { id: "a", label: "Token A", placeholder: "z.B. 2", answer: "2", normalize: "alnumUpper" },
-        { id: "b", label: "Token B", placeholder: "z.B. 4", answer: "4", normalize: "alnumUpper" },
-        { id: "c", label: "Token C", placeholder: "z.B. 5", answer: "5", normalize: "alnumUpper" }
+        { id: "a", label: "Token A", placeholder: "z.B. 7", answer: "2", normalize: "alnumUpper" },
+        { id: "b", label: "Token B", placeholder: "z.B. 9", answer: "4", normalize: "alnumUpper" },
+        { id: "c", label: "Token C", placeholder: "z.B. 1", answer: "5", normalize: "alnumUpper" }
       ]
     },
     hints: ["Denk an die erste Primzahl.", "Wortlänge zählen und eine kleine Subtraktion lösen."],
@@ -125,7 +128,8 @@ const STATIONS = [
         (Die Worte liegen durcheinander.)
       </div>
       <p class="muted">Rätseltyp: Drag&Drop Reihenfolge.</p>
-    `,
+      <p class="muted small">🧩 Im Logbuch erscheint eine neue Zeile – irgendwer hat hier Spuren gelegt.</p>
+`,
     puzzle: {
       type: "dragdrop",
       title: "Bringe die Schritte in die richtige Reihenfolge",
@@ -148,7 +152,8 @@ const STATIONS = [
       <p>In der Chemiesammlung blinkt ein Bedienfeld: „Sicherheitsprotokoll aktivieren, um Zugriff zu erhalten.“</p>
       <div class="callout"><strong>Hinweis:</strong> „Wähle nur die Maßnahmen, die in einem Labor wirklich sinnvoll sind.“</div>
       <p class="muted">Rätseltyp: Schalter/Logik (mehrere richtige). Basics reichen.</p>
-    `,
+      <p class="muted small">⚡ Die Neonröhren surren, als hätte jemand die Zeit an- und ausgeschaltet.</p>
+`,
     puzzle: {
       type: "switches",
       title: "Aktiviere das Sicherheitsprotokoll",
@@ -181,7 +186,8 @@ const STATIONS = [
       <p>Im Physikraum liegt ein Zettel: „Der Virus hat die Einheiten vertauscht. Sortiere sie, sonst bleibt alles instabil.“</p>
       <div class="callout"><strong>Mini-Spickzettel:</strong> Spannung (V), Strom (A), Widerstand (Ω), Leistung (W)</div>
       <p class="muted">Rätseltyp: Zuordnen (Dropdowns). Gut machbar ohne Formeln.</p>
-    `,
+      <p class="muted small">🕵️‍♀️ Ihr seht winzige Markierungen – fast wie eine Schnitzeljagd.</p>
+`,
     puzzle: {
       type: "match",
       title: "Ordne Größe ↔ Einheit",
@@ -213,7 +219,8 @@ const STATIONS = [
       </div>
       <p>Wenn ihr die Buchstaben richtig zusammensetzt, öffnet sich eine Box.</p>
       <p class="muted">Rätseltyp: Code-Eingabe (aus Zuordnung ableiten).</p>
-    `,
+      <p class="muted small">🔒 Jede gelöste Aufgabe beruhigt die Störung für ein paar Sekunden.</p>
+`,
     puzzle: { type: "code", title: "Welche DNA-Buchstaben sind das?", prompt: "Gib die Buchstabenfolge ein (nur A/C/G/T).", answer: "GATC", normalize: "alnumUpper" },
     hints: ["Ordne die Buchstaben alphabetisch den Zahlen 1–4 zu.", "Setze dann die Zahlenfolge in Buchstaben um."],
     rewardItems: [
@@ -237,7 +244,8 @@ const STATIONS = [
         <em>9−4, 2×4, 10−2, 7−2</em>.
       </div>
       <p class="muted">Rätseltyp: Zahlenschloss (Drehziffern). Voraussetzung: Schlüsselkarte.</p>
-    `,
+      <p class="muted small">🌀 Ein kurzer Kälteschauer – dann läuft alles wieder normal … fast.</p>
+`,
     puzzle: { type: "dials", title: "Stell die vier Ziffern ein", prompt: "Stelle die 4-stellige Kombination ein:", digits: 4, answer: "5885" },
     hints: ["Vier Ergebnisse ergeben den Code.", "Suche die eingeritzten Zahlen an der Tür."],
     rewardItems: [
@@ -260,7 +268,8 @@ const STATIONS = [
         <strong>Regel:</strong> „KLICK = 1, pause = 0. Lies die Folge als Binärzahl.“
       </div>
       <p class="muted">Rätseltyp: Multiple Choice (Binär → Dezimal). Machbar mit Teamwork.</p>
-    `,
+      <p class="muted small">🧠 Teamwork hilft: Manche Hinweise ergeben erst gemeinsam Sinn.</p>
+`,
     puzzle: {
       type: "mcq",
       title: "Welche Dezimalzahl ist das?",
@@ -286,7 +295,8 @@ const STATIONS = [
       <p>Im Kunstraum hängt ein Poster: „Komplementärfarben stabilisieren die Anzeige.“</p>
       <div class="callout"><strong>Info:</strong> Komplementärfarben sind Gegensätze im Farbkreis (z.B. Rot ↔ Grün).</div>
       <p class="muted">Rätseltyp: Zuordnen (Paare).</p>
-    `,
+      <p class="muted small">🎯 Ihr seid näher dran: Das Logbuch zeigt „Ankerpunkte aktiv“.</p>
+`,
     puzzle: {
       type: "match",
       title: "Ordne die Paare zu",
@@ -313,7 +323,8 @@ const STATIONS = [
       <p>In der Sporthalle blinkt eine Anzeige: „Bevor du sprintest, <em>warm</em> dich auf – sonst stoppt die Zeitschleife alles.“</p>
       <div class="callout"><strong>Aufgabe:</strong> Bringt einen Trainingsplan in sinnvolle Reihenfolge.</div>
       <p class="muted">Rätseltyp: Drag&Drop (Reihenfolge).</p>
-    `,
+      <p class="muted small">⏳ In der Ferne klackt eine Uhr, als würde die Schule mitzählen.</p>
+`,
     puzzle: {
       type: "dragdrop",
       title: "Ordne den Trainingsplan",
@@ -565,7 +576,11 @@ const STATIONS = [
     storyHtml: `
       <p>Ein Sitzplan ist durcheinander geraten. Die Reihen sollen von vorne nach hinten sortiert werden.</p>
       <p class="muted">Rätseltyp: Drag&Drop.</p>
-    `,
+      <div class="callout">
+        <strong>Merkwürdig:</strong> In der Ecke des Sitzplans ist ein kleines <strong>A</strong> eingeritzt.
+        Daneben steht eine einzelne Ziffer. Ihr notiert sie im Chrono-Logbuch.
+      </div>
+`,
     puzzle: {
       type: "dragdrop",
       title: "Sortiere die Reihen",
@@ -574,7 +589,9 @@ const STATIONS = [
       correctOrder: ["Reihe 1 (vorn)", "Reihe 2", "Reihe 3", "Reihe 4 (hinten)"]
     },
     hints: ["Vorne kommt vor hinten.", "Die Zahlen geben die Reihenfolge an."],
-    rewardItems: [{ id: "seat_token", name: "Sitzplan-Token", tag: "Tool" }],
+    rewardItems: [{ id: "seat_token", name: "Sitzplan-Token", tag: "Tool" },
+      { id: "stab_a", name: "Stabilisator-Ziffer A: 4", tag: "Finale" }
+    ],
     requiresItems: [],
     nextId: "lab_storage"
   },
@@ -801,10 +818,16 @@ const STATIONS = [
     storyHtml: `
       <p>Ein Schaltplan zeigt zwei Widerstände in Reihe: 4 Ω und 6 Ω. Gesucht ist der Gesamtwert.</p>
       <p class="muted">Rätseltyp: Code-Eingabe.</p>
-    `,
+      <div class="callout">
+        <strong>Störung:</strong> Auf dem Schaltplan ist ein <strong>B</strong>-Symbol, als hätte jemand es extra markiert.
+        Eine Ziffer daneben wirkt wie ein „Stabilisator“-Hinweis für später.
+      </div>
+`,
     puzzle: { type: "code", title: "Gesamtwiderstand", prompt: "Welche Summe ergibt sich aus den beiden Werten?", answer: "10", normalize: "alnumUpper" },
     hints: ["In Reihe werden Werte addiert.", "Addiere die beiden Zahlen."],
-    rewardItems: [{ id: "resistor", name: "Widerstands-Token", tag: "Tool" }],
+    rewardItems: [{ id: "resistor", name: "Widerstands-Token", tag: "Tool" },
+      { id: "stab_b", name: "Stabilisator-Ziffer B: 1", tag: "Finale" }
+    ],
     requiresItems: [],
     nextId: "media_room"
   },
@@ -950,7 +973,7 @@ const STATIONS = [
       <p>Das Lichtpult zeigt Kanäle: 1=Rot, 2=Grün, 3=Blau. „Mische zu Weiß.“</p>
       <p class="muted">Rätseltyp: Code-Eingabe.</p>
     `,
-    puzzle: { type: "code", title: "Lichtmix", prompt: "Welche Kanäle müssen an? (z.B. 123)", answer: "123", normalize: "alnumUpper" },
+    puzzle: { type: "code", title: "Lichtmix", prompt: "Welche Kanäle müssen an? (z.B. 124)", answer: "123", normalize: "alnumUpper" },
     hints: ["Additive Farbmischung.", "Mehrere Kanäle gleichzeitig."],
     rewardItems: [{ id: "spot_token", name: "Spot-Token", tag: "Tool" }],
     requiresItems: [],
@@ -1105,7 +1128,11 @@ const STATIONS = [
       </div>
       <p>Die richtige Checksum öffnet ein Fach unter dem Tresen.</p>
       <p class="muted">Rätseltyp: Mehrfacheingabe (Zwischenschritte).</p>
-    `,
+      <div class="callout">
+        <strong>Fund:</strong> Unter dem Tresen klebt ein Aufkleber mit <strong>C</strong> – und einer einzelnen Ziffer.
+        Ihr sammelt den Hinweis fürs Finale ein.
+      </div>
+`,
     puzzle: {
       type: "multi",
       title: "Gib die Checksum ein",
@@ -1117,7 +1144,9 @@ const STATIONS = [
       ]
     },
     hints: ["Finde zuerst die zwei Summen.", "Nutze die Regel Schritt für Schritt."],
-    rewardItems: [{ id: "magnet", name: "Starker Magnet", tag: "Tool" }],
+    rewardItems: [{ id: "magnet", name: "Starker Magnet", tag: "Tool" },
+      { id: "stab_c", name: "Stabilisator-Ziffer C: 8", tag: "Finale" }
+    ],
     requiresItems: [],
     nextId: "basement"
   },
@@ -1135,7 +1164,10 @@ const STATIONS = [
         <em>Ordnet eure gesammelten Buchstaben nach der Reihenfolge dieser Symbole.</em>
       </div>
       <p class="muted">So entsteht der finale Zeitcode – aber ihr braucht noch den <strong>Server-Schlüssel</strong>.</p>
-    `,
+      <p class="muted small">
+        Merkt euch: Der Zeitcode allein reicht nicht – am Ende fordert das System zusätzlich die drei Stabilisator-Ziffern <strong>A</strong>, <strong>B</strong>, <strong>C</strong>.
+      </p>
+`,
     puzzle: { type: "code", title: "Bestätige die Buchstabenfolge", prompt: "Gib die Buchstabenfolge ein (ohne Leerzeichen).", answer: "KGSCHRONO", normalize: "alnumUpper" },
     hints: ["Die Symbole stehen für frühere Stationen.", "Nutzt die Reihenfolge der Symbole, um eure 9 Buchstaben zu sortieren."],
     rewardItems: [{ id: "server_hint", name: "Notiz: Serverraum hinter der Aula", tag: "Hinweis" }],
@@ -1186,14 +1218,14 @@ const STATIONS = [
     storyHtml: `
       <p>Der Serverraum brummt. Das Chrono-Virus zählt herunter. Ihr steckt den Server-Schlüssel ein und das Terminal fordert:</p>
       <div class="callout">
-        <strong>INPUT:</strong> „Zeitcode (9 Buchstaben)“<br/>
-        <span class="muted">Tipp: Im Keller habt ihr die Folge gesehen. Außerdem stehen die Buchstaben als Items im Inventar.</span>
+        <strong>INPUT:</strong> „Zeitcode (9 Buchstaben) + Stabilisator-Ziffern A/B/C“<br/>
+        <span class="muted">Tipp: Zeitcode-Reihenfolge aus dem Keller. A/B/C habt ihr unterwegs als einzelne Ziffern gefunden.</span>
       </div>
     `,
-    puzzle: { type: "code", title: "Gib den Zeitcode ein", prompt: "Zeitcode eingeben:", answer: "KGSCHRONO", normalize: "alnumUpper" },
-    hints: ["Im Keller halfen euch die Symbole, die Reihenfolge zu finden.", "Ohne Leerzeichen eintippen."],
+    puzzle: { type: "code", title: "Gib Zeitcode + A/B/C ein", prompt: "Gib den Zeitcode ein und hänge A, B, C (in dieser Reihenfolge) direkt hinten an:", answer: "KGSCHRONO418", normalize: "alnumUpper" },
+    hints: ["Zuerst der 9-Buchstaben-Zeitcode (aus den Chrono-Fragmenten).", "Danach kommen die drei Stabilisator-Ziffern in der Reihenfolge A → B → C."],
     rewardItems: [],
-    requiresItems: ["server_key", "l1","l2","l3","l4","l5","l6","l7","l8","l9"],
+    requiresItems: ["server_key", "l1","l2","l3","l4","l5","l6","l7","l8","l9", "stab_a","stab_b","stab_c"],
     nextId: "end"
   },
 
