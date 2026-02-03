@@ -89,11 +89,10 @@ const STATIONS = [
       <p>Im Computerraum läuft ein Terminal im „Lockdown-Modus“. Daneben klebt ein Post-it vom ${SCHOOL.npcs[2].role} (${SCHOOL.npcs[2].name}):</p>
       <div class="callout">
         <strong>Post-it:</strong><br/>
-        1) „Token A ist die <em>kleinste Primzahl</em>.“<br/>
-        2) „Token B ist die Anzahl Buchstaben in <em>NETZ</em>.“<br/>
-        3) „Token C ist das Ergebnis von <em>9 − 4</em>.“
+        „Drei Tokens, drei Quellen: <em>Zahlenverständnis</em>, <em>Wortlänge</em>, <em>Rechenweg</em>.“<br/>
+        „A beginnt bei den Primzahlen, B steckt im Wort <em>NETZ</em>, C ist eine kleine Differenz.“
       </div>
-      <p class="muted">Rätseltyp: Mehrfacheingabe. (Alle Infos stehen hier.)</p>
+      <p class="muted">Rätseltyp: Mehrfacheingabe. (Hinweise sind indirekt.)</p>
     `,
     puzzle: {
       type: "multi",
@@ -105,7 +104,7 @@ const STATIONS = [
         { id: "c", label: "Token C", placeholder: "z.B. 5", answer: "5", normalize: "alnumUpper" }
       ]
     },
-    hints: ["Kleinste Primzahl ist 2.", "NETZ hat 4 Buchstaben, 9−4 ist 5."],
+    hints: ["Denk an die erste Primzahl.", "Wortlänge zählen und eine kleine Subtraktion lösen."],
     rewardItems: [
       { id: "l2", name: "Buchstabe 2/9: G", tag: "Code" },
       { id: "keycard", name: "Schlüsselkarte (Lehrertrakt)", tag: "Tool" }
@@ -207,16 +206,16 @@ const STATIONS = [
     title: "Biologieraum – DNA als Zahlencode",
     badge: "Station 6",
     storyHtml: `
-      <p>Im Biologieraum findet ihr ein Blatt mit einer einfachen Zuordnung:</p>
+      <p>Im Biologieraum findet ihr ein Blatt mit einer Labor-Eselsbrücke.</p>
       <div class="callout">
-        <strong>Zuordnung:</strong> A=1, C=2, G=3, T=4<br/>
+        <strong>Hinweis:</strong> „Die vier DNA-Basen sind in alphabetischer Reihenfolge nummeriert.“<br/>
         <strong>Zahlenfolge:</strong> 3-1-4-2
       </div>
       <p>Wenn ihr die Buchstaben richtig zusammensetzt, öffnet sich eine Box.</p>
       <p class="muted">Rätseltyp: Code-Eingabe (aus Zuordnung ableiten).</p>
     `,
     puzzle: { type: "code", title: "Welche DNA-Buchstaben sind das?", prompt: "Gib die Buchstabenfolge ein (nur A/C/G/T).", answer: "GATC", normalize: "alnumUpper" },
-    hints: ["3=G, 1=A, 4=T, 2=C.", "Also: G A T C."],
+    hints: ["Ordne die Buchstaben alphabetisch den Zahlen 1–4 zu.", "Setze dann die Zahlenfolge in Buchstaben um."],
     rewardItems: [
       { id: "pinzette", name: "Pinzette", tag: "Tool" },
       { id: "l6", name: "Buchstabe 6/9: R", tag: "Code" }
@@ -233,16 +232,13 @@ const STATIONS = [
     storyHtml: `
       <p>Die Tür zum Lehrerzimmer hat einen Kartenleser. Dahinter steht ein Aktenschrank mit Drehkombination.</p>
       <div class="callout">
-        <strong>Hinweis am Schrank:</strong> „Vier Rätsel, vier Ziffern.“<br/>
-        1) 8 − 3 = ?<br/>
-        2) 2 × 4 = ?<br/>
-        3) 9 − 1 = ?<br/>
-        4) 7 − 2 = ?
+        <strong>Hinweis am Schrank:</strong> „Vier kleine Rechenwege, vier Ziffern. Reihung zählt.“<br/>
+        <em>Minus, Mal, Minus, Minus</em> – die Zahlen stehen an der Tür eingeritzt.
       </div>
       <p class="muted">Rätseltyp: Zahlenschloss (Drehziffern). Voraussetzung: Schlüsselkarte.</p>
     `,
     puzzle: { type: "dials", title: "Stell die vier Ziffern ein", prompt: "Stelle die 4-stellige Kombination ein:", digits: 4, answer: "5885" },
-    hints: ["Rechne jede Zeile aus und setz die Ergebnisse hintereinander.", "8−3=5, 2×4=8, 9−1=8, 7−2=5."],
+    hints: ["Vier Ergebnisse ergeben den Code.", "Suche die eingeritzten Zahlen an der Tür."],
     rewardItems: [
       { id: "l7", name: "Buchstabe 7/9: O", tag: "Code" },
       { id: "folder", name: "Akte „Chrono“", tag: "Hinweis" }
@@ -271,7 +267,7 @@ const STATIONS = [
       choices: ["45", "53", "37", "29"],
       correctIndex: 0
     },
-    hints: ["101101₂ = 32 + 8 + 4 + 1", "Das ergibt 45."],
+    hints: ["Stelle die Potenzen von 2 zusammen.", "Die Einsen zählen nur die passenden Stellen."],
     rewardItems: [
       { id: "l8", name: "Buchstabe 8/9: N", tag: "Code" },
       { id: "tuningfork", name: "Stimmgabel", tag: "Tool" }
@@ -346,11 +342,11 @@ const STATIONS = [
     badge: "Station 11",
     storyHtml: `
       <p>Im Schulhof steht eine alte Sonnenuhr. Daneben liegt eine Kreideformel:</p>
-      <div class="callout"><strong>Hinweis:</strong> „Der Schatten wandert in 4er-Schritten: 3 → 7 → 11 → ?“</div>
+      <div class="callout"><strong>Hinweis:</strong> „Der Schatten wandert in gleich großen Schritten: 3 → 7 → 11 → ?“</div>
       <p class="muted">Rätseltyp: Code-Eingabe (Folge erkennen).</p>
     `,
     puzzle: { type: "code", title: "Folge fortsetzen", prompt: "Welche Zahl kommt als Nächstes?", answer: "15", normalize: "alnumUpper" },
-    hints: ["Die Folge steigt immer um 4.", "11 + 4 = 15."],
+    hints: ["Die Differenzen sind konstant.", "Setz den Sprung fort."],
     rewardItems: [{ id: "chalk", name: "Kreidestück", tag: "Tool" }],
     requiresItems: [],
     nextId: "stairwell"
@@ -362,7 +358,7 @@ const STATIONS = [
     title: "Treppenhaus – Pfeile im Geländer",
     badge: "Station 12",
     storyHtml: `
-      <p>Im Treppenhaus sind Pfeile eingeritzt: ↑ ↑ ↓ ↑. Eine Notiz sagt: „↑ = plus 1, ↓ = minus 1; Startwert 5“.</p>
+      <p>Im Treppenhaus sind Pfeile eingeritzt: ↑ ↑ ↓ ↑. Eine kleine Legende am Handlauf erklärt: „↑ zählt hoch, ↓ zählt runter“. Startwert: 5.</p>
       <p class="muted">Rätseltyp: Multiple Choice.</p>
     `,
     puzzle: {
@@ -372,7 +368,7 @@ const STATIONS = [
       choices: ["6", "7", "8", "9"],
       correctIndex: 1
     },
-    hints: ["Rechne Schritt für Schritt.", "5→6→7→6→7."],
+    hints: ["Jeder Pfeil ändert den Wert um genau 1.", "Bewege dich Schritt für Schritt."],
     rewardItems: [{ id: "step_note", name: "Geländer-Notiz", tag: "Hinweis" }],
     requiresItems: [],
     nextId: "lockers"
@@ -435,7 +431,7 @@ const STATIONS = [
     title: "Erdkunderaum – Kartenlegende",
     badge: "Station 15",
     storyHtml: `
-      <p>Eine Landkarte zeigt Symbole: Berg △, See ○, Stadt ■. Ein Zettel fragt nach der Legende.</p>
+      <p>Eine Landkarte zeigt nur Symbole (△, ○, ■). Daneben steht: „Legende fehlt – ordne sinnvoll zu.“</p>
       <p class="muted">Rätseltyp: Zuordnen.</p>
     `,
     puzzle: {
@@ -449,7 +445,7 @@ const STATIONS = [
       ],
       options: ["Berg", "See", "Stadt", "Wüste", "Wald"]
     },
-    hints: ["Dreieck = Gipfel/Berg.", "Kreis = See."],
+    hints: ["Denke an typische Kartensymbole.", "Formen deuten auf Landschaftsformen."],
     rewardItems: [{ id: "map_pin", name: "Karten-Pin", tag: "Tool" }],
     requiresItems: [],
     nextId: "mathlab"
@@ -465,7 +461,7 @@ const STATIONS = [
       <p class="muted">Rätseltyp: Code-Eingabe (Verdopplung).</p>
     `,
     puzzle: { type: "code", title: "Fortsetzung", prompt: "Welche Zahl fehlt?", answer: "32", normalize: "alnumUpper" },
-    hints: ["Jede Zahl ist doppelt so groß wie die vorherige.", "16 × 2 = 32."],
+    hints: ["Die Zahlen wachsen in einem festen Verhältnis.", "Prüfe den Faktor zwischen den Gliedern."],
     rewardItems: [{ id: "math_stamp", name: "Stempel „geprüft“", tag: "Tool" }],
     requiresItems: [],
     nextId: "history"
@@ -504,7 +500,7 @@ const STATIONS = [
     title: "Französischraum – Zahlenvergleich",
     badge: "Station 18",
     storyHtml: `
-      <p>Ein Vokabelposter zeigt: un=1, deux=2, trois=3, quatre=4, cinq=5.</p>
+      <p>Ein Vokabelposter zeigt die französischen Zahlwörter für 1 bis 5.</p>
       <p class="muted">Rätseltyp: Mehrfacheingabe.</p>
     `,
     puzzle: {
@@ -516,7 +512,7 @@ const STATIONS = [
         { id: "b", label: "cinq − un", placeholder: "Zahl", answer: "4", normalize: "alnumUpper" }
       ]
     },
-    hints: ["deux=2, trois=3.", "cinq=5, un=1."],
+    hints: ["Übersetze die Wörter in Zahlen.", "Addiere bzw. subtrahiere danach."],
     rewardItems: [{ id: "fr_card", name: "Vokabelkarte", tag: "Tool" }],
     requiresItems: [],
     nextId: "english"
@@ -602,7 +598,7 @@ const STATIONS = [
       ],
       options: ["Kalt", "Warm", "Heiß", "Gefroren"]
     },
-    hints: ["5 °C ist kalt, 22 °C ist normal warm.", "80 °C ist klar heiß."],
+    hints: ["Ordne nach Alltagsgefühl.", "Sehr hohe Werte gehören zu Heiß."],
     rewardItems: [{ id: "thermo", name: "Thermo-Streifen", tag: "Tool" }],
     requiresItems: [],
     nextId: "outdoor_track"
@@ -614,11 +610,11 @@ const STATIONS = [
     title: "Außensportplatz – Runden zählen",
     badge: "Station 23",
     storyHtml: `
-      <p>Ein Laufplan sagt: „2 Runden Einlaufen, 3 Runden Sprint, 1 Runde Auslaufen“.</p>
+      <p>Ein Laufplan nennt drei Abschnitte mit Rundenanzahl. Gesucht ist die Gesamtzahl.</p>
       <p class="muted">Rätseltyp: Zahlenschloss (Drehziffern).</p>
     `,
     puzzle: { type: "dials", title: "Gesamtrunden", prompt: "Stelle die Gesamtzahl an Runden ein:", digits: 2, answer: "06" },
-    hints: ["2 + 3 + 1 = 6.", "Bei zwei Ziffern: 06."],
+    hints: ["Addiere alle Abschnitte.", "Zwei Ziffern erforderlich."],
     rewardItems: [{ id: "lap_chip", name: "Runden-Chip", tag: "Tool" }],
     requiresItems: [],
     nextId: "nurse"
@@ -630,7 +626,7 @@ const STATIONS = [
     title: "Sanitätsraum – Erste-Hilfe-Code",
     badge: "Station 24",
     storyHtml: `
-      <p>Ein Erste-Hilfe-Poster listet: Prüfen, Rufen, Drücken, Beatmen.</p>
+      <p>Ein Erste-Hilfe-Poster zeigt die Rettungskette, aber ohne Nummerierung.</p>
       <p class="muted">Rätseltyp: Mehrfacheingabe.</p>
     `,
     puzzle: {
@@ -644,7 +640,7 @@ const STATIONS = [
         { id: "d", label: "Beatmen", placeholder: "Zahl", answer: "4", normalize: "alnumUpper" }
       ]
     },
-    hints: ["Die Reihenfolge ist im Poster vorgegeben.", "Es ist 1-2-3-4."],
+    hints: ["Die Abfolge ist standardisiert.", "Zähle von der ersten zur letzten Maßnahme."],
     rewardItems: [{ id: "med_patch", name: "Erste-Hilfe-Patch", tag: "Tool" }],
     requiresItems: [],
     nextId: "counseling"
@@ -678,11 +674,11 @@ const STATIONS = [
     title: "Mensa-Lager – Kistenlabel",
     badge: "Station 26",
     storyHtml: `
-      <p>Im Lager stehen Kisten mit Codes: A1, A2, B1, B2. Ein Zettel: „A=1, B=2; Zahl addieren“.</p>
+      <p>Im Lager stehen Kisten mit Codes: A1, A2, B1, B2. Ein Zettel: „Bedeutung aus Buchstabenwert und Ziffer“.</p>
       <p class="muted">Rätseltyp: Code-Eingabe.</p>
     `,
     puzzle: { type: "code", title: "Code berechnen", prompt: "Was ergibt B2?", answer: "4", normalize: "alnumUpper" },
-    hints: ["B=2, Zahl=2.", "2+2 = 4."],
+    hints: ["Nutze die Alphabetposition.", "Addiere Buchstabenwert und Ziffer."],
     rewardItems: [{ id: "crate_key", name: "Lager-Schlüssel", tag: "Tool" }],
     requiresItems: [],
     nextId: "schoolyard"
@@ -723,7 +719,7 @@ const STATIONS = [
     title: "Bushaltestelle – Fahrplan",
     badge: "Station 28",
     storyHtml: `
-      <p>Der Bus fährt um 13:05, 13:20, 13:35. Ein Zettel fragt nach dem Takt.</p>
+      <p>Der Bus fährt um 13:05, 13:20, 13:35. Ein Zettel fragt nach dem Takt und der nächsten Fahrt.</p>
       <p class="muted">Rätseltyp: Mehrfacheingabe.</p>
     `,
     puzzle: {
@@ -735,7 +731,7 @@ const STATIONS = [
         { id: "next", label: "Nächste Abfahrt nach 13:35", placeholder: "Uhrzeit", answer: "1350", normalize: "alnumUpper" }
       ]
     },
-    hints: ["Die Abstände sind gleich.", "13:35 + 15 Minuten = 13:50."],
+    hints: ["Vergleiche die Abstände.", "Zähle die Minuten weiter."],
     rewardItems: [{ id: "ticket", name: "Bus-Ticket", tag: "Tool" }],
     requiresItems: [],
     nextId: "janitor_closet"
@@ -776,7 +772,7 @@ const STATIONS = [
     title: "Mathe-Raum – Zahlenpyramide",
     badge: "Station 30",
     storyHtml: `
-      <p>Eine Pyramide zeigt: unten 3, 5, 2. In der Mitte stehen die Summen der unteren Felder.</p>
+      <p>Eine Pyramide zeigt unten 3, 5, 2. Die Regel steht klein daneben: „Oben entsteht aus den zwei Feldern darunter.“</p>
       <p class="muted">Rätseltyp: Mehrfacheingabe (mehrstufig).</p>
     `,
     puzzle: {
@@ -789,7 +785,7 @@ const STATIONS = [
         { id: "top", label: "Spitze", placeholder: "Zahl", answer: "15", normalize: "alnumUpper" }
       ]
     },
-    hints: ["3+5=8, 5+2=7.", "Spitze ist 8+7=15."],
+    hints: ["Berechne erst die Mitte.", "Dann die Spitze aus der Mitte."],
     rewardItems: [{ id: "pyramid_note", name: "Pyramiden-Notiz", tag: "Hinweis" }],
     requiresItems: [],
     nextId: "physics_advanced"
@@ -804,8 +800,8 @@ const STATIONS = [
       <p>Ein Schaltplan zeigt zwei Widerstände in Reihe: 4 Ω und 6 Ω. Gesucht ist der Gesamtwert.</p>
       <p class="muted">Rätseltyp: Code-Eingabe.</p>
     `,
-    puzzle: { type: "code", title: "Gesamtwiderstand", prompt: "Welche Summe ergibt sich?", answer: "10", normalize: "alnumUpper" },
-    hints: ["Reihenschaltung addiert.", "4 + 6 = 10."],
+    puzzle: { type: "code", title: "Gesamtwiderstand", prompt: "Welche Summe ergibt sich aus den beiden Werten?", answer: "10", normalize: "alnumUpper" },
+    hints: ["In Reihe werden Werte addiert.", "Addiere die beiden Zahlen."],
     rewardItems: [{ id: "resistor", name: "Widerstands-Token", tag: "Tool" }],
     requiresItems: [],
     nextId: "media_room"
@@ -839,7 +835,7 @@ const STATIONS = [
     title: "Ethikraum – Werte-Reihenfolge",
     badge: "Station 33",
     storyHtml: `
-      <p>Ein Plakat sagt: „Erst zuhören, dann fragen, dann handeln.“</p>
+      <p>Ein Plakat nennt drei Werte, aber die Reihenfolge fehlt.</p>
       <p class="muted">Rätseltyp: Drag&Drop.</p>
     `,
     puzzle: {
@@ -849,7 +845,7 @@ const STATIONS = [
       items: ["Handeln", "Zuhören", "Fragen"],
       correctOrder: ["Zuhören", "Fragen", "Handeln"]
     },
-    hints: ["Zuerst zuhören.", "Handeln kommt zum Schluss."],
+    hints: ["Beginne mit dem passivsten Schritt.", "Handeln ist der letzte Schritt."],
     rewardItems: [{ id: "values", name: "Werte-Karte", tag: "Hinweis" }],
     requiresItems: [],
     nextId: "admin"
@@ -861,7 +857,7 @@ const STATIONS = [
     title: "Sekretariat – Bürocode",
     badge: "Station 34",
     storyHtml: `
-      <p>Auf dem Tresen liegt ein Zettel: „Akten A–C werden alphabetisch sortiert.“</p>
+      <p>Auf dem Tresen liegt ein Zettel: „Akten A–C werden nach Alphabetposition nummeriert.“</p>
       <p class="muted">Rätseltyp: Zuordnen.</p>
     `,
     puzzle: {
@@ -875,7 +871,7 @@ const STATIONS = [
       ],
       options: ["1", "2", "3", "4"]
     },
-    hints: ["Alphabetisch von A nach C.", "A=1, B=2, C=3."],
+    hints: ["Zähle die Buchstabenposition.", "A steht ganz am Anfang."],
     rewardItems: [{ id: "stamp", name: "Sekretariats-Stempel", tag: "Tool" }],
     requiresItems: [],
     nextId: "library_annex"
@@ -887,7 +883,7 @@ const STATIONS = [
     title: "Bibliotheks-Anbau – Signaturen",
     badge: "Station 35",
     storyHtml: `
-      <p>Eine Buchsignatur lautet: „BIO-4-7“. Die Regel: Fach = BIO (4), Regal = 7.</p>
+      <p>Eine Buchsignatur lautet: „BIO-4-7“. Daneben: „Fach und Regal sind codiert.“</p>
       <p class="muted">Rätseltyp: Mehrfacheingabe.</p>
     `,
     puzzle: {
@@ -899,7 +895,7 @@ const STATIONS = [
         { id: "regal", label: "Regal", placeholder: "Zahl", answer: "7", normalize: "alnumUpper" }
       ]
     },
-    hints: ["BIO steht in der Legende für Fach 4.", "Regal ist die zweite Zahl."],
+    hints: ["Die erste Zahl passt zum Fach.", "Die zweite Zahl ist das Regal."],
     rewardItems: [{ id: "signatur", name: "Signatur-Karte", tag: "Tool" }],
     requiresItems: [],
     nextId: "roof"
@@ -915,7 +911,7 @@ const STATIONS = [
       <p class="muted">Rätseltyp: Zahlenschloss (Drehziffern).</p>
     `,
     puzzle: { type: "dials", title: "Nächste Richtung", prompt: "Setze 1=N, 2=O, 3=S, 4=W. Welche Zahl?", digits: 1, answer: "1" },
-    hints: ["Nach W kommt wieder N.", "N = 1."],
+    hints: ["Der Kreis schließt sich.", "Setze die Richtung in die Zahl um."],
     rewardItems: [{ id: "wind_pin", name: "Wind-Pin", tag: "Tool" }],
     requiresItems: [],
     nextId: "greenhouse"
@@ -953,7 +949,7 @@ const STATIONS = [
       <p class="muted">Rätseltyp: Code-Eingabe.</p>
     `,
     puzzle: { type: "code", title: "Lichtmix", prompt: "Welche Kanäle müssen an? (z.B. 123)", answer: "123", normalize: "alnumUpper" },
-    hints: ["Weiß entsteht aus Rot, Grün, Blau.", "Alle drei Kanäle."],
+    hints: ["Additive Farbmischung.", "Mehrere Kanäle gleichzeitig."],
     rewardItems: [{ id: "spot_token", name: "Spot-Token", tag: "Tool" }],
     requiresItems: [],
     nextId: "language_lab"
@@ -965,7 +961,7 @@ const STATIONS = [
     title: "Sprachlabor – Silbencode",
     badge: "Station 39",
     storyHtml: `
-      <p>Ein Tonband sagt: „Zähle Silben: Pro-jekt-wo-che“.</p>
+      <p>Ein Tonband sagt: „Zähle die Silben im Wort <em>Projektwoche</em>.“</p>
       <p class="muted">Rätseltyp: Mehrfacheingabe.</p>
     `,
     puzzle: {
@@ -974,7 +970,7 @@ const STATIONS = [
       prompt: "Trage die Silbenanzahl ein:",
       fields: [{ id: "syll", label: "Projektwoche", placeholder: "Zahl", answer: "4", normalize: "alnumUpper" }]
     },
-    hints: ["Pro-jekt-wo-che.", "Das sind 4 Silben."],
+    hints: ["Sprich das Wort langsam.", "Jeder Vokalblock zählt als Silbe."],
     rewardItems: [{ id: "tape", name: "Tonband", tag: "Tool" }],
     requiresItems: [],
     nextId: "parking"
@@ -1008,7 +1004,7 @@ const STATIONS = [
     title: "Archivkeller – Aktenkürzel",
     badge: "Station 41",
     storyHtml: `
-      <p>Aktenkürzel: MAT=1, BIO=2, PHY=3. Gesucht: Kürzel → Nummer.</p>
+      <p>Aktenkürzel: MAT, BIO, PHY. Ein Hinweis: „Numeriert nach Reihenfolge im Kellerplan.“</p>
       <p class="muted">Rätseltyp: Zuordnen.</p>
     `,
     puzzle: {
@@ -1022,7 +1018,7 @@ const STATIONS = [
       ],
       options: ["1", "2", "3", "4"]
     },
-    hints: ["Die Kürzel sind direkt zugeordnet.", "MAT=1, BIO=2, PHY=3."],
+    hints: ["Suche die Reihenfolge im Plan an der Wand.", "Nummeriere von oben nach unten."],
     rewardItems: [{ id: "archive_key", name: "Archiv-Schlüssel", tag: "Tool" }],
     requiresItems: [],
     nextId: "break_room"
@@ -1034,11 +1030,11 @@ const STATIONS = [
     title: "Lehrer-Küche – Zutatenliste",
     badge: "Station 42",
     storyHtml: `
-      <p>Ein Rezept: „2 Tassen Wasser, 1 Tasse Zucker, 3 Löffel Kakao“. Gesucht ist die Summe der Einheiten.</p>
+      <p>Ein Rezept nennt drei Mengen. Gesucht ist die Summe der Einheiten.</p>
       <p class="muted">Rätseltyp: Code-Eingabe.</p>
     `,
     puzzle: { type: "code", title: "Einheiten addieren", prompt: "Wie viele Einheiten insgesamt?", answer: "6", normalize: "alnumUpper" },
-    hints: ["2 + 1 + 3.", "Ergibt 6."],
+    hints: ["Addiere alle Mengen.", "Einheiten zählen, nicht umrechnen."],
     rewardItems: [{ id: "mug", name: "Messbecher", tag: "Tool" }],
     requiresItems: [],
     nextId: "counselor_office"
@@ -1050,11 +1046,11 @@ const STATIONS = [
     title: "Berufsberatung – Prioritäten",
     badge: "Station 43",
     storyHtml: `
-      <p>Ein Plan listet: „Informationen sammeln → Optionen abwägen → Entscheidung treffen → Plan umsetzen“.</p>
+      <p>Ein Plan listet vier Schritte, aber die Reihenfolge ist durcheinander.</p>
       <p class="muted">Rätseltyp: Zahlenschloss (Drehziffern).</p>
     `,
     puzzle: { type: "dials", title: "Reihenfolge als Code", prompt: "Setze die Reihenfolge als 4-stellige Zahl (1–4).", digits: 4, answer: "1234" },
-    hints: ["Die Reihenfolge ist direkt vorgegeben.", "1-2-3-4."],
+    hints: ["Von Analyse zu Umsetzung.", "Ordne logisch von Anfang bis Ende."],
     rewardItems: [{ id: "career_note", name: "Berufs-Notiz", tag: "Hinweis" }],
     requiresItems: [],
     nextId: "makerspace"
@@ -1066,7 +1062,7 @@ const STATIONS = [
     title: "Maker-Space – Bauplan",
     badge: "Station 44",
     storyHtml: `
-      <p>Ein Bauplan sagt: „Bauteile A(5), B(7), C(9). Summe × 2.“</p>
+      <p>Ein Bauplan nennt Bauteile A, B, C mit Zahlen. Gesucht ist eine Summe und ein Endwert.</p>
       <p class="muted">Rätseltyp: Mehrfacheingabe (mehrstufig).</p>
     `,
     puzzle: {
@@ -1078,7 +1074,7 @@ const STATIONS = [
         { id: "end", label: "Endwert", placeholder: "Zahl", answer: "42", normalize: "alnumUpper" }
       ]
     },
-    hints: ["5+7+9=21.", "21×2=42."],
+    hints: ["Addiere die drei Werte.", "Verdopple die Summe."],
     rewardItems: [{ id: "bolt", name: "Bau-Bolzen", tag: "Tool" }],
     requiresItems: [],
     nextId: "canteen"
@@ -1099,7 +1095,7 @@ const STATIONS = [
         Dessert = 4<br/>
         Saft = 6<br/>
         <hr/>
-        <strong>Checksum-Regel:</strong> (Pasta + Suppe) × 2 − (Salat + Saft) + Dessert
+        <strong>Checksum-Regel:</strong> „Zwei Gerichte addieren, verdoppeln, zwei abziehen, dann Dessert dazu.“
       </div>
       <p>Die richtige Checksum öffnet ein Fach unter dem Tresen.</p>
       <p class="muted">Rätseltyp: Mehrfacheingabe (Zwischenschritte).</p>
@@ -1114,7 +1110,7 @@ const STATIONS = [
         { id: "checksum", label: "Checksum", placeholder: "Zahl", answer: "33", normalize: "alnumUpper" }
       ]
     },
-    hints: ["12+9=21, 7+6=13.", "21×2 − 13 + 4 = 33."],
+    hints: ["Finde zuerst die zwei Summen.", "Nutze die Regel Schritt für Schritt."],
     rewardItems: [{ id: "magnet", name: "Starker Magnet", tag: "Tool" }],
     requiresItems: [],
     nextId: "basement"
