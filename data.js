@@ -53,7 +53,6 @@ const STATIONS = [
     nextId: "hall"
   },
 
-  // 1) K
   {
     id: "hall",
     title: "Hauptflur – Flackernde Aushänge",
@@ -77,12 +76,11 @@ const STATIONS = [
       correctIndex: 1
     },
     hints: ["Man kommt normalerweise zuerst an.", "Nach Hause ist meistens am Ende."],
-    rewardItems: [{ id: "l1", name: "Buchstabe 1/9: K", tag: "Code" }],
+    rewardItems: [{ id: "l1", name: "Chrono-Fragment „Flur“: K", tag: "Code" }],
     requiresItems: ["logbook"],
     nextId: "computer"
   },
 
-  // 2) G + keycard
   {
     id: "computer",
     title: "Computerraum – Terminal mit Dreifach-Login",
@@ -109,14 +107,13 @@ const STATIONS = [
     },
     hints: ["Denk an die erste Primzahl.", "Wortlänge zählen und eine kleine Subtraktion lösen."],
     rewardItems: [
-      { id: "l2", name: "Buchstabe 2/9: G", tag: "Code" },
+      { id: "l2", name: "Chrono-Fragment „PC“: G", tag: "Code" },
       { id: "keycard", name: "Schlüsselkarte (Lehrertrakt)", tag: "Tool" }
     ],
     requiresItems: [],
     nextId: "library"
   },
 
-  // 3) S
   {
     id: "library",
     title: "Bibliothek – Die Zeile, die fehlt",
@@ -138,12 +135,11 @@ const STATIONS = [
       correctOrder: ["Suchen", "Ausleihen", "Lesen/Notieren", "Zurückgeben"]
     },
     hints: ["Man sucht zuerst und gibt ganz am Ende zurück.", "Zwischen Ausleihen und Zurückgeben passiert… Lesen 🙂"],
-    rewardItems: [{ id: "l3", name: "Buchstabe 3/9: S", tag: "Code" }],
+    rewardItems: [{ id: "l3", name: "Chrono-Fragment „Bücher“: S", tag: "Code" }],
     requiresItems: [],
     nextId: "chem"
   },
 
-  // 4) C + UV tool
   {
     id: "chem",
     title: "Chemiesammlung – Sicherheits-Schalter",
@@ -171,13 +167,12 @@ const STATIONS = [
     hints: ["Alles, was mit Schutz/Ordnung zu tun hat, ist gut.", "Essen/Trinken/Probieren ist im Labor falsch."],
     rewardItems: [
       { id: "uv", name: "UV-Lampe", tag: "Tool" },
-      { id: "l4", name: "Buchstabe 4/9: C", tag: "Code" }
+      { id: "l4", name: "Chrono-Fragment „Reagenzglas“: C", tag: "Code" }
     ],
     requiresItems: [],
     nextId: "physics"
   },
 
-  // 5) H (match)
   {
     id: "physics",
     title: "Physikraum – Einheiten-Chaos",
@@ -201,12 +196,11 @@ const STATIONS = [
       options: ["A", "V", "W", "Ω", "m", "s"]
     },
     hints: ["Die vier richtigen stehen im Spickzettel.", "m und s sind hier Ablenkung."],
-    rewardItems: [{ id: "l5", name: "Buchstabe 5/9: H", tag: "Code" }],
+    rewardItems: [{ id: "l5", name: "Chrono-Fragment „Blitz“: H", tag: "Code" }],
     requiresItems: [],
     nextId: "bio"
   },
 
-  // 6) R (code) + pinzette
   {
     id: "bio",
     title: "Biologieraum – DNA als Zahlencode",
@@ -225,13 +219,12 @@ const STATIONS = [
     hints: ["Ordne die Buchstaben alphabetisch den Zahlen 1–4 zu.", "Setze dann die Zahlenfolge in Buchstaben um."],
     rewardItems: [
       { id: "pinzette", name: "Pinzette", tag: "Tool" },
-      { id: "l6", name: "Buchstabe 6/9: R", tag: "Code" }
+      { id: "l6", name: "Chrono-Fragment „DNA“: R", tag: "Code" }
     ],
     requiresItems: [],
     nextId: "teacher"
   },
 
-  // 7) O1 (requires keycard) + dials
   {
     id: "teacher",
     title: "Lehrerzimmer – Der Aktenschrank",
@@ -249,14 +242,13 @@ const STATIONS = [
     puzzle: { type: "dials", title: "Stell die vier Ziffern ein", prompt: "Stelle die 4-stellige Kombination ein:", digits: 4, answer: "5885" },
     hints: ["Vier Ergebnisse ergeben den Code.", "Suche die eingeritzten Zahlen an der Tür."],
     rewardItems: [
-      { id: "l7", name: "Buchstabe 7/9: O", tag: "Code" },
+      { id: "l7", name: "Chrono-Fragment „Aktenschrank“: O", tag: "Code" },
       { id: "folder", name: "Akte „Chrono“", tag: "Hinweis" }
     ],
     requiresItems: ["keycard"],
     nextId: "music"
   },
 
-  // 8) N (mcq) – 101101₂ = 45
   {
     id: "music",
     title: "Musikraum – Takt der Zeitschleife",
@@ -265,7 +257,8 @@ const STATIONS = [
       <p>Im Musikraum ist ein Metronom an und klickt in einem seltsamen Muster. An der Tafel steht:</p>
       <div class="callout">
         <strong>Muster:</strong> KLICK – pause – KLICK – KLICK – pause – KLICK<br/>
-        <strong>Regel:</strong> „KLICK = 1, pause = 0. Lies die Folge als Binärzahl.“
+        <strong>Regel:</strong> „KLICK = 1, pause = 0. Lies die Folge als Binärzahl.“<br/>
+        <span class="muted">Mini-Hilfe: 6 Stellen → Werte: 32 16 8 4 2 1</span>
       </div>
       <p class="muted">Rätseltyp: Multiple Choice (Binär → Dezimal). Machbar mit Teamwork.</p>
       <p class="muted small">🧠 Teamwork hilft: Manche Hinweise ergeben erst gemeinsam Sinn.</p>
@@ -277,16 +270,15 @@ const STATIONS = [
       choices: ["45", "53", "37", "29"],
       correctIndex: 0
     },
-    hints: ["Stelle die Potenzen von 2 zusammen.", "Die Einsen zählen nur die passenden Stellen."],
+    hints: ["Nutze die Stellenwerte 32–16–8–4–2–1.", "Addiere nur die Werte an Stellen mit 1."],
     rewardItems: [
-      { id: "l8", name: "Buchstabe 8/9: N", tag: "Code" },
+      { id: "l8", name: "Chrono-Fragment „Metronom“: N", tag: "Code" },
       { id: "tuningfork", name: "Stimmgabel", tag: "Tool" }
     ],
     requiresItems: [],
     nextId: "art"
   },
 
-  // Tool station (wire)
   {
     id: "art",
     title: "Kunstraum – Komplementär-Paare",
@@ -314,7 +306,6 @@ const STATIONS = [
     nextId: "sport"
   },
 
-  // 9) O2
   {
     id: "sport",
     title: "Sporthalle – Trainingsplan",
@@ -340,14 +331,13 @@ const STATIONS = [
     },
     hints: ["Aufwärmen kommt immer zuerst.", "Dehnen/Cooldown ist am Ende."],
     rewardItems: [
-      { id: "l9", name: "Buchstabe 9/9: O", tag: "Code" },
+      { id: "l9", name: "Chrono-Fragment „Sport“: O", tag: "Code" },
       { id: "band", name: "Sportband (Gummi)", tag: "Tool" }
     ],
     requiresItems: [],
     nextId: "courtyard"
   },
 
-  // 11
   {
     id: "courtyard",
     title: "Schulhof – Uhrenspiel",
@@ -364,7 +354,6 @@ const STATIONS = [
     nextId: "stairwell"
   },
 
-  // 12
   {
     id: "stairwell",
     title: "Treppenhaus – Pfeile im Geländer",
@@ -386,7 +375,6 @@ const STATIONS = [
     nextId: "lockers"
   },
 
-  // 13
   {
     id: "lockers",
     title: "Schließfächer – Morgenroutine",
@@ -408,7 +396,6 @@ const STATIONS = [
     nextId: "foyer"
   },
 
-  // 14
   {
     id: "foyer",
     title: "Foyer – Lautsprecher-Test",
@@ -437,7 +424,6 @@ const STATIONS = [
     nextId: "geography"
   },
 
-  // 15
   {
     id: "geography",
     title: "Erdkunderaum – Kartenlegende",
@@ -463,7 +449,6 @@ const STATIONS = [
     nextId: "mathlab"
   },
 
-  // 16
   {
     id: "mathlab",
     title: "Mathelab – Reihen mit Sprung",
@@ -479,7 +464,6 @@ const STATIONS = [
     nextId: "history"
   },
 
-  // 17
   {
     id: "history",
     title: "Geschichtsraum – Zeitstrahl",
@@ -506,7 +490,6 @@ const STATIONS = [
     nextId: "french"
   },
 
-  // 18
   {
     id: "french",
     title: "Französischraum – Zahlenvergleich",
@@ -530,7 +513,6 @@ const STATIONS = [
     nextId: "english"
   },
 
-  // 19
   {
     id: "english",
     title: "Englischraum – Anagramm",
@@ -546,7 +528,6 @@ const STATIONS = [
     nextId: "art_storage"
   },
 
-  // 20
   {
     id: "art_storage",
     title: "Kunstraum – Farbmischung",
@@ -568,7 +549,6 @@ const STATIONS = [
     nextId: "auditorium"
   },
 
-  // 21
   {
     id: "auditorium",
     title: "Aula – Sitzplan",
@@ -596,7 +576,6 @@ const STATIONS = [
     nextId: "lab_storage"
   },
 
-  // 22
   {
     id: "lab_storage",
     title: "Laborkammer – Temperatur-Skala",
@@ -622,7 +601,6 @@ const STATIONS = [
     nextId: "outdoor_track"
   },
 
-  // 23
   {
     id: "outdoor_track",
     title: "Außensportplatz – Runden zählen",
@@ -639,7 +617,6 @@ const STATIONS = [
     nextId: "nurse"
   },
 
-  // 24
   {
     id: "nurse",
     title: "Sanitätsraum – Erste-Hilfe-Code",
@@ -665,7 +642,6 @@ const STATIONS = [
     nextId: "counseling"
   },
 
-  // 25
   {
     id: "counseling",
     title: "Beratungsraum – Fokus-Regel",
@@ -687,7 +663,6 @@ const STATIONS = [
     nextId: "cafeteria_storage"
   },
 
-  // 26
   {
     id: "cafeteria_storage",
     title: "Mensa-Lager – Kistenlabel",
@@ -703,7 +678,6 @@ const STATIONS = [
     nextId: "schoolyard"
   },
 
-  // 27
   {
     id: "schoolyard",
     title: "Pausenhof – Pausenregeln",
@@ -732,7 +706,6 @@ const STATIONS = [
     nextId: "bus_stop"
   },
 
-  // 28
   {
     id: "bus_stop",
     title: "Bushaltestelle – Fahrplan",
@@ -756,7 +729,6 @@ const STATIONS = [
     nextId: "janitor_closet"
   },
 
-  // 29
   {
     id: "janitor_closet",
     title: "Putzraum – Materialliste",
@@ -785,7 +757,6 @@ const STATIONS = [
     nextId: "math_advanced"
   },
 
-  // 30
   {
     id: "math_advanced",
     title: "Mathe-Raum – Zahlenpyramide",
@@ -810,7 +781,6 @@ const STATIONS = [
     nextId: "physics_advanced"
   },
 
-  // 31
   {
     id: "physics_advanced",
     title: "Physikraum – Schaltungscode",
@@ -832,7 +802,6 @@ const STATIONS = [
     nextId: "media_room"
   },
 
-  // 32
   {
     id: "media_room",
     title: "Medienraum – Dateiformate",
@@ -854,7 +823,6 @@ const STATIONS = [
     nextId: "theology"
   },
 
-  // 33
   {
     id: "theology",
     title: "Ethikraum – Werte-Reihenfolge",
@@ -876,7 +844,6 @@ const STATIONS = [
     nextId: "admin"
   },
 
-  // 34
   {
     id: "admin",
     title: "Sekretariat – Bürocode",
@@ -902,7 +869,6 @@ const STATIONS = [
     nextId: "library_annex"
   },
 
-  // 35
   {
     id: "library_annex",
     title: "Bibliotheks-Anbau – Signaturen",
@@ -926,7 +892,6 @@ const STATIONS = [
     nextId: "roof"
   },
 
-  // 36
   {
     id: "roof",
     title: "Dachzugang – Windcode",
@@ -942,7 +907,6 @@ const STATIONS = [
     nextId: "greenhouse"
   },
 
-  // 37
   {
     id: "greenhouse",
     title: "Schulgarten – Gießplan",
@@ -964,7 +928,6 @@ const STATIONS = [
     nextId: "stage"
   },
 
-  // 38
   {
     id: "stage",
     title: "Bühne – Lichtpult",
@@ -980,7 +943,6 @@ const STATIONS = [
     nextId: "language_lab"
   },
 
-  // 39
   {
     id: "language_lab",
     title: "Sprachlabor – Silbencode",
@@ -1001,7 +963,6 @@ const STATIONS = [
     nextId: "parking"
   },
 
-  // 40
   {
     id: "parking",
     title: "Parkplatz – Nummernlogik",
@@ -1023,7 +984,6 @@ const STATIONS = [
     nextId: "basement_archive"
   },
 
-  // 41
   {
     id: "basement_archive",
     title: "Archivkeller – Aktenkürzel",
@@ -1050,7 +1010,6 @@ const STATIONS = [
     nextId: "break_room"
   },
 
-  // 42
   {
     id: "break_room",
     title: "Lehrer-Küche – Zutatenliste",
@@ -1067,24 +1026,23 @@ const STATIONS = [
     nextId: "counselor_office"
   },
 
-  // 43
   {
     id: "counselor_office",
     title: "Berufsberatung – Prioritäten",
     badge: "Station 43",
     storyHtml: `
       <p>Ein Plan listet vier Schritte, aber die Reihenfolge ist durcheinander.</p>
-      <div class="callout"><strong>Schritte:</strong> Bewerben, Nachfassen, Interessen klären, Optionen recherchieren.</div>
+      <div class="callout"><strong>Schritte (mit Nummern):</strong><br/>1) Bewerben<br/>2) Nachfassen<br/>3) Interessen klären<br/>4) Optionen recherchieren</div>
+      <p class="muted small">🔢 Code-Regel: Schreibe die <em>Nummern</em> der Schritte in der <em>richtigen Reihenfolge</em> hintereinander.</p>
       <p class="muted">Rätseltyp: Zahlenschloss (Drehziffern).</p>
     `,
-    puzzle: { type: "dials", title: "Reihenfolge als Code", prompt: "Setze die Reihenfolge als 4-stellige Zahl (1–4).", digits: 4, answer: "1234" },
-    hints: ["Von Analyse zu Umsetzung.", "Ordne logisch von Anfang bis Ende."],
+    puzzle: { type: "dials", title: "Reihenfolge als Code", prompt: "Setze die Reihenfolge als 4-stellige Zahl (1–4).", digits: 4, answer: "3412" },
+    hints: ["Was kommt ganz am Anfang? (Interessen klären)", "Dann Optionen recherchieren, danach Bewerben, am Ende Nachfassen."],
     rewardItems: [{ id: "career_note", name: "Berufs-Notiz", tag: "Hinweis" }],
     requiresItems: [],
     nextId: "makerspace"
   },
 
-  // 44
   {
     id: "makerspace",
     title: "Maker-Space – Bauplan",
@@ -1109,7 +1067,6 @@ const STATIONS = [
     nextId: "canteen"
   },
 
-  // Magnet
   {
     id: "canteen",
     title: "Mensa – Der Menü-Checksum",
@@ -1151,7 +1108,6 @@ const STATIONS = [
     nextId: "basement"
   },
 
-  // Keller – requires magnet + UV
   {
     id: "basement",
     title: "Hausmeisterkeller – Unsichtbare Markierungen",
@@ -1175,7 +1131,6 @@ const STATIONS = [
     nextId: "workshop"
   },
 
-  // Werkraum – server key
   {
     id: "workshop",
     title: "Werkraum/Technik – Der Not-Aus-Kreis",
@@ -1210,22 +1165,85 @@ const STATIONS = [
     nextId: "server"
   },
 
-  // Finale
   {
     id: "server",
-    title: "Serverraum – Stoppe den Chrono-Virus",
-    badge: "Finale",
+    title: "Serverraum – Rack verkabeln",
+    badge: "Finale 1/3",
+    
     storyHtml: `
-      <p>Der Serverraum brummt. Das Chrono-Virus zählt herunter. Ihr steckt den Server-Schlüssel ein und das Terminal fordert:</p>
+      <p>Ihr seid im Serverraum. Die Zeitschleife flackert in der Luft – als würde die Realität „puffern“.</p>
       <div class="callout">
-        <strong>INPUT:</strong> „Zeitcode (9 Buchstaben) + Stabilisator-Ziffern A/B/C“<br/>
-        <span class="muted">Tipp: Zeitcode-Reihenfolge aus dem Keller. A/B/C habt ihr unterwegs als einzelne Ziffern gefunden.</span>
+        <strong>Rack-Panel:</strong> Drei farbige Buchsen sind frei (Blau, Grün, Rot). Daneben drei Ports:<br/>
+        <strong>N</strong> = Netz • <strong>B</strong> = Backup • <strong>S</strong> = Strom/Notstrom
       </div>
+      <p>Mit dem <strong>Server-Schlüssel</strong> öffnet ihr die Wartungsklappe. Jetzt müsst ihr die Kabel richtig stecken, sonst geht die Konsole nicht online.</p>
+      <p class="muted">Rätseltyp: Zuordnen. (Start des Finales.)</p>
     `,
-    puzzle: { type: "code", title: "Gib Zeitcode + A/B/C ein", prompt: "Gib den Zeitcode ein und hänge A, B, C (in dieser Reihenfolge) direkt hinten an:", answer: "KGSCHRONO418", normalize: "alnumUpper" },
-    hints: ["Zuerst der 9-Buchstaben-Zeitcode (aus den Chrono-Fragmenten).", "Danach kommen die drei Stabilisator-Ziffern in der Reihenfolge A → B → C."],
+
+    puzzle: {
+      type: "match",
+      title: "Steckt die Kabel in die richtigen Ports",
+      prompt: "Ordne jedes Kabel dem passenden Port (N/B/S) zu:",
+      rows: [
+        { left: "Blaues Kabel", answer: "N" },
+        { left: "Grünes Kabel", answer: "B" },
+        { left: "Rotes Kabel", answer: "S" }
+      ],
+      options: ["N", "B", "S", "X"]
+    },
+    hints: ["Lies die Port-Legende am Panel (N/B/S).", "Blau=Netz (N), Grün=Backup (B), Rot=Strom (S)."],
+    rewardItems: [{ id: "rack_on", name: "Rack online", tag: "Finale" }],
+    requiresItems: ["server_key"],
+    nextId: "server_console"
+  },
+
+  {
+    id: "server_console",
+    title: "Server-Konsole – Stabilisator kalibrieren",
+    badge: "Finale 2/3",
+    storyHtml: `
+      <p>Das Rack summt. Auf der Konsole steht: <strong>„Stabilisator-Kanäle A/B/C“</strong>.</p>
+      <div class="callout">
+        <strong>Anzeige:</strong> „Drehregler auf A–B–C stellen, sonst bricht die Verbindung ab.“<br/>
+        <span class="muted">Ihr habt die drei Stabilisator-Ziffern unterwegs gefunden.</span>
+      </div>
+      <p class="muted">Rätseltyp: Zahlenschloss (3 Drehziffern).</p>
+    `,
+    puzzle: { type: "dials", title: "Stellt A–B–C ein", prompt: "Stellt die drei Ziffern (A dann B dann C) ein:", digits: 3, answer: "418" },
+    hints: ["Schaut in euer Inventar: dort stehen A, B und C.", "Reihenfolge ist A → B → C."],
+    rewardItems: [{ id: "console_unlocked", name: "Konsole entsperrt", tag: "Finale" }],
+    requiresItems: ["rack_on", "stab_a", "stab_b", "stab_c"],
+    nextId: "server_final"
+  },
+
+  {
+    id: "server_final",
+    title: "Löschpanel – Der Zeitcode",
+    badge: "Finale 3/3",
+    storyHtml: `
+      <p>Jetzt öffnet sich das Löschpanel. Der Cursor blinkt – ihr habt nur noch wenige Minuten Puffer.</p>
+      <div class="callout">
+        <strong>Benötigt:</strong><br/>
+        1) <strong>Zeitcode</strong> (9 Buchstaben) aus den Chrono-Fragmenten<br/>
+        2) <strong>A, B, C</strong> als einzelne Ziffern<br/>
+        <span class="muted">Die <em>Reihenfolge</em> der Chrono-Fragmente habt ihr im Keller (UV) herausgefunden.</span>
+      </div>
+      <p class="muted">Rätseltyp: Mehrfacheingabe – wie bei einem echten Panel.</p>
+    `,
+    puzzle: {
+      type: "multi",
+      title: "Code eingeben und bestätigen",
+      prompt: "Tragt Zeitcode und die drei Ziffern ein:",
+      fields: [
+        { id: "timecode", label: "Zeitcode (9 Buchstaben)", placeholder: "_________", answer: "KGSCHRONO", normalize: "alnumUpper" },
+        { id: "a", label: "A", placeholder: "Ziffer", answer: "4", normalize: "alnumUpper" },
+        { id: "b", label: "B", placeholder: "Ziffer", answer: "1", normalize: "alnumUpper" },
+        { id: "c", label: "C", placeholder: "Ziffer", answer: "8", normalize: "alnumUpper" }
+      ]
+    },
+    hints: ["Zeitcode: Ordne die neun Fragmente nach der Symbol-Reihenfolge aus dem Keller.", "A/B/C stehen als Items im Inventar."],
     rewardItems: [],
-    requiresItems: ["server_key", "l1","l2","l3","l4","l5","l6","l7","l8","l9", "stab_a","stab_b","stab_c"],
+    requiresItems: ["console_unlocked", "l1","l2","l3","l4","l5","l6","l7","l8","l9", "server_key"],
     nextId: "end"
   },
 

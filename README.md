@@ -20,7 +20,10 @@ Im Verlauf sammelt ihr:
 - **9 Code-Fragmente (Buchstaben)** → daraus entsteht der **Zeitcode** (Reihenfolge-Hinweis im Keller).
 - **3 Stabilisator-Ziffern A/B/C** → verteilt im Spiel (nicht am Anfang).
 
-Im Serverraum wird beides kombiniert: **Zeitcode + A + B + C** (ohne Leerzeichen, Bindestriche sind egal).
+Im Finale gibt es jetzt **3 Schritte** im Serverraum:
+1) Rack verkabeln
+2) Stabilisator A–B–C kalibrieren
+3) Löschpanel: Zeitcode + A/B/C in getrennten Feldern eingeben
 
 ## Puzzletypen
 - `code` (Text/Code)
