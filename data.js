@@ -234,7 +234,7 @@ const STATIONS = [
       <div class="callout">
         <strong>Hinweis am Schrank:</strong> „Vier kleine Rechenwege, vier Ziffern. Reihung zählt.“<br/>
         <em>Minus, Mal, Minus, Minus</em> – an der Tür stehen vier Rechnungen (von links nach rechts):
-        <em>9−4, 2×4, 10−2, 7−2</em>.
+        <em>9 4, 2 4, 10 2, 7 2</em>.
       </div>
       <p class="muted">Rätseltyp: Zahlenschloss (Drehziffern). Voraussetzung: Schlüsselkarte.</p>
       <p class="muted small">🌀 Ein kurzer Kälteschauer – dann läuft alles wieder normal … fast.</p>
